@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Claire &amp; Toner | 25th March 2017</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- take out -->
+                    <a class="navbar-brand" href="./">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-center">
+                        <li><a href="./#location">Location</a></li>
+                        <li><a href="./#wheretostay">Where to Stay</a></li>
+                        <li><a href="./#theday">The Day</a></li>
+                        <!--<li><a href="./#photos">Photos</a></li>-->
+                        <li><a href="./#gifts">Gifts</a></li>
+                        <li><a href="./#contact">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="pullRight"><a href="rsvp">RSVP</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <!-- Page -->
+        <div id="content" class="below-navbar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="brush-script">RSVP</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <form method="POST" action="https://formspree.io/hello@claireandtonerwedding.com">
+                            <div class="form-group" id="rsvp-names">
+                                <div id="rsvp-names-list">
+                                    <div class="form-group">
+                                        <label for="person[]">Who are you?</label>
+                                        <input type="text" class="form-control" name="person[]" placeholder="Your name here">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default js-addPerson"><i class="glyphicon glyphicon-plus"></i> Add Person</button>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-attending">
+                                <label for="attending">Will you be gracing us with your presence?</label>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio" name="attending" id="attendingYes" value="yes" checked>
+                                    Yes
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio" name="attending" id="attendingNo" value="no">
+                                    No
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-dietaryRequirements">
+                                <label>Please could you share any allergies / dietary information so we don't have to deal with the drama of poisoning any guests?</label>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-songs">
+                                <label>What songs would you most like to boogey to on the dance floor?</label>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-alcohol">
+                                <label>Who will be getting their drank on?</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="claire" checked>
+                                        Claire
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-messages">
+                                <label>Any messages that you'd like to share with the future bride and groom?</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="messages" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-excuses">
+                                <label>Well that sucks! We would have loved to have had you there. Would you care to explain your reasoning for not attending the event of the year?</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="excuses" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="hidden" id="rsvp-yourLoss">
+                                <p>We're sure that was a good reason you gave just then. We will consider forgiveness and get back to you. Thank you for letting us know!</p>
+                            </div>
+
+                            <div class="hidden" id="rsvp-complete">
+                                <p>Thanks for RSVP-ing!</p>
+                            </div>
+
+                            <hr>
+
+                            <input type="hidden" name="_next" value="//claireandtonerwedding.com" />
+                            <button type="button" class="btn btn-default js-previous hidden"><i class="glyphicon glyphicon-menu-left"></i> Back</button>
+                            <button type="button" class="btn btn-default js-next"><i class="glyphicon glyphicon-menu-right"></i> Next</button>
+                            <button type="submit" class="btn btn-default js-submit hidden"><i class="glyphicon glyphicon-ok"></i> Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-danger fade js-rsvp-error" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="js-rsvp-error-message"></span>
+            </div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Custom JS -->
+        <script src="js/rsvp.js"></script>
+    </body>
+</html>
