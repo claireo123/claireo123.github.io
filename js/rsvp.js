@@ -22,18 +22,10 @@ var formRoutes = {
         'next': '#rsvp-messages'
     },
     '#rsvp-messages': {
-        'previous': '#rsvp-songs',
-        'next': '#rsvp-complete'
+        'previous': '#rsvp-songs'
     },
     '#rsvp-excuses': {
-        'previous': '#rsvp-attending',
-        'next': '#rsvp-yourLoss'
-    },
-    '#rsvp-yourLoss': {
-        'previous': '#rsvp-excuses'
-    },
-    '#rsvp-complete': {
-        'previous': '#rsvp-messages',
+        'previous': '#rsvp-attending'
     }
 };
 
@@ -41,7 +33,7 @@ var formRoutes = {
 var currentStepId = '#rsvp-names';
 
 // Change formspree _next target
-$('input[name=_next]').val(window.location.href.replace('/rsvp', ''));
+$('input[name=_next]').val(window.location.href.replace('/rsvp', '/thanks'));
 
 ////////////////////////////////////////////////////////////////////////////////
 // Helper functions
@@ -160,4 +152,13 @@ $('.js-addPerson').on('click', function() {
 // Hook up the delete button on the name form elements
 $('#rsvp-names').on('click', '.js-removePerson', function() {
     $(this).closest('.form-group').remove();
+});
+
+// Prevent submissions by using the enter key
+$('body').on('keydown', 'input', function(event) {
+   var x = event.which;
+   if (x === 13) {
+       event.preventDefault();
+       console.log("https://www.youtube.com/watch?v=cQ_b4_lw0Gg");
+   }
 });

@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,10 +43,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-center">
-                        <li><a href="#location">Location</a></li>
-                        <li><a href="#wheretostay">Where to Stay</a></li>
-                        <li><a href="#theday">The Day</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="./#location">Location</a></li>
+                        <li><a href="./#wheretostay">Where to Stay</a></li>
+                        <li><a href="./#theday">The Day</a></li>
+                        <!--<li><a href="./#photos">Photos</a></li>-->
+                        <li><a href="./#gifts">Gifts</a></li>
+                        <li><a href="./#contact">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="pullRight"><a href="rsvp">RSVP</a></li>
@@ -53,22 +58,87 @@
         </nav>
 
         <!-- Page -->
-        <div id="content">
-            <!-- names image -->
-            <div class="container-fluid container-full-height">
-                <div class="row row-full-height">
-                    <div class="col-xs-12" id="welcome">
-                        <div class="vert-center">
-                            <div class="col-xs-12 text-center">
-                                <h2 class="brush-script">RSVP</h2>
-                            </div>
-                            <p>
-                                You can RSVP here from<br>
-                                <span class="bluetext">18th December 2016</span><br>
-                            </p>
-                        </div>
+        <div id="content" class="below-navbar green-background">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="brush-script">RSVP</h2>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <form method="POST" action="https://formspree.io/hello@claireandtonerwedding.com">
+                            <div class="form-group" id="rsvp-names">
+                                <div id="rsvp-names-list">
+                                    <div class="form-group">
+                                        <label for="person[]">What are your names? <br><small class="bluetext">Click the "Add Person" button to add a new line for any others you are RSVP-ing for!</small></label>
+                                        <input type="text" class="form-control" name="person[]" placeholder="Your name here">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default js-addPerson"><i class="glyphicon glyphicon-plus"></i> Add Person</button>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-attending">
+                                <label for="attending">Will you be gracing us with your presence?</label>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio" name="attending" id="attendingYes" value="yes" checked>
+                                    Yes
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio" name="attending" id="attendingNo" value="no">
+                                    No
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-dietaryRequirements">
+                                <label>Please could you share any allergies / dietary information?<br><small class="bluetext">Y'know, so we don't have to deal with the drama of poisoning any guests!</small></label>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-songs">
+                                <label>What songs would you most like to boogey to on the dance floor?</label>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-alcohol">
+                                <label>Who will be drinking alcohol?</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="claire" checked>
+                                        Claire
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-messages">
+                                <label>Any messages that you'd like to share with the future bride and groom?</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="messages" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group hidden" id="rsvp-excuses">
+                                <label>Well that sucks! We would have loved to have had you there. Would you care to explain your reasoning for not attending the event of the year?</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="excuses" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <input type="hidden" name="_next" value="//claireandtonerwedding.com/thanks" />
+                            <button type="button" class="btn btn-default js-previous hidden"><i class="glyphicon glyphicon-menu-left"></i> Back</button>
+                            <button type="button" class="btn btn-default js-next"><i class="glyphicon glyphicon-menu-right"></i> Next</button>
+                            <button type="submit" class="btn btn-default js-submit hidden"><i class="glyphicon glyphicon-ok"></i> Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-danger fade js-rsvp-error" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="js-rsvp-error-message"></span>
             </div>
         </div>
 
@@ -76,6 +146,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Custom JS -->
+        <script src="js/rsvp.js"></script>
         <!-- Google Analytics -->
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

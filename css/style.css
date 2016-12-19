@@ -72,6 +72,10 @@ a, a:hover, a:visited {
     color: #4276a5;
 }
 
+.bluetext a, .bluetext a:hover, .bluetext a:visited {
+    color: #4276a5;
+}
+
 .row-extra-padding {
     padding-bottom: 25px;
 }
@@ -127,6 +131,10 @@ a, a:hover, a:visited {
     color: #ffffff;
 }
 
+.green-background {
+    background-color: #c7e2e2;
+}
+
 .btn-no-style {
     background: none;
     border: none;
@@ -137,4 +145,8 @@ a, a:hover, a:visited {
     position: absolute;
     bottom: 10px;
     margin: 0 10px;
+}
+
+.word-wrap {
+    word-wrap: break-word;
 }
