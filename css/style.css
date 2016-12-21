@@ -124,7 +124,6 @@ a, a:hover, a:visited {
 #contact {
     background-color: #333333;
     color: #ffffff;
-    color: #ffffff;
 }
 
 #contact a {
@@ -149,4 +148,8 @@ a, a:hover, a:visited {
 
 .word-wrap {
     word-wrap: break-word;
+}
+
+.underlined {
+    text-decoration: underline;
 }
