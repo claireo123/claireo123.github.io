@@ -23,7 +23,7 @@
         <![endif]-->
     </head>
 
-    <body>
+    <body class="green-background">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -46,7 +46,6 @@
                         <li><a href="./#location">Location</a></li>
                         <li><a href="./#wheretostay">Where to Stay</a></li>
                         <li><a href="./#theday">The Day</a></li>
-                        <!--<li><a href="./#photos">Photos</a></li>-->
                         <li><a href="./#gifts">Gifts</a></li>
                         <li><a href="./#contact">Contact</a></li>
                     </ul>
@@ -58,89 +57,85 @@
         </nav>
 
         <!-- Page -->
-        <div id="content" class="below-navbar green-background">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <h2 class="brush-script">RSVP</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
-                        <form method="POST" action="https://formspree.io/hello@claireandtonerwedding.com">
-                            <div class="form-group" id="rsvp-names">
-                                <div id="rsvp-names-list">
-                                    <div class="form-group">
-                                        <label for="person[]">What are your names? <br><small class="bluetext">Click the "Add Person" button to add a new line for any others you are RSVP-ing for!</small></label>
-                                        <input type="text" class="form-control" name="person[]" placeholder="Your name here">
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-default js-addPerson"><i class="glyphicon glyphicon-plus"></i> Add Person</button>
-                            </div>
-
-                            <div class="form-group hidden" id="rsvp-attending">
-                                <label for="attending">Will you be gracing us with your presence?</label>
-                                <div class="radio">
-                                    <label>
-                                    <input type="radio" name="attending" id="attendingYes" value="yes" checked>
-                                    Yes
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                    <input type="radio" name="attending" id="attendingNo" value="no">
-                                    No
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group hidden" id="rsvp-dietaryRequirements">
-                                <label>Please could you share any allergies / dietary information?<br><small class="bluetext">Y'know, so we don't have to deal with the drama of poisoning any guests!</small></label>
-                            </div>
-
-                            <div class="form-group hidden" id="rsvp-songs">
-                                <label>What songs would you most like to boogey to on the dance floor?</label>
-                            </div>
-
-                            <div class="form-group hidden" id="rsvp-alcohol">
-                                <label>Who will be drinking alcohol?</label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="claire" checked>
-                                        Claire
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group hidden" id="rsvp-messages">
-                                <label>Any messages that you'd like to share with the future bride and groom?</label>
-                                <div class="form-group">
-                                    <textarea class="form-control" name="messages" rows="3"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group hidden" id="rsvp-excuses">
-                                <label>Well that sucks! We would have loved to have had you there. Would you care to explain your reasoning for not attending the event of the year?</label>
-                                <div class="form-group">
-                                    <textarea class="form-control" name="excuses" rows="3"></textarea>
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <input type="hidden" name="_next" value="//claireandtonerwedding.com/thanks" />
-                            <button type="button" class="btn btn-default js-previous hidden"><i class="glyphicon glyphicon-menu-left"></i> Back</button>
-                            <button type="button" class="btn btn-default js-next"><i class="glyphicon glyphicon-menu-right"></i> Next</button>
-                            <button type="submit" class="btn btn-default js-submit hidden"><i class="glyphicon glyphicon-ok"></i> Submit</button>
-                        </form>
-                    </div>
+        <div class="container-fluid below-navbar">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h2 class="brush-script">RSVP</h2>
                 </div>
             </div>
-            <div class="alert alert-danger fade js-rsvp-error" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span class="js-rsvp-error-message"></span>
+            <div class="row row-extra-padding">
+                <div class="col-md-offset-2 col-md-8">
+                    <form method="POST" action="https://formspree.io/hello@claireandtonerwedding.com">
+                        <div class="form-group" id="rsvp-names">
+                            <div id="rsvp-names-list">
+                                <div class="form-group">
+                                    <label for="person[]">What are your names? <br><small class="bluetext">Click the "Add Person" button to add a new line for any others you are RSVP-ing for!</small></label>
+                                    <input type="text" class="form-control" name="person[]" placeholder="Your name here">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default js-addPerson"><i class="glyphicon glyphicon-plus"></i> Add Person</button>
+                        </div>
+
+                        <div class="form-group hidden" id="rsvp-attending">
+                            <label for="attending">Will you be gracing us with your presence?</label>
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="attending" id="attendingYes" value="yes" checked>
+                                Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="attending" id="attendingNo" value="no">
+                                No
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group hidden" id="rsvp-dietaryRequirements">
+                            <label>Please could you share any allergies / dietary information?<br><small class="bluetext">Y'know, so we don't have to deal with the drama of poisoning any guests!</small></label>
+                        </div>
+
+                        <div class="form-group hidden" id="rsvp-songs">
+                            <label>What songs would you most like to boogey to on the dance floor?</label>
+                        </div>
+
+                        <div class="form-group hidden" id="rsvp-alcohol">
+                            <label>Who will be drinking alcohol?</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="claire" checked>
+                                    Claire
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group hidden" id="rsvp-messages">
+                            <label>Any messages that you'd like to share with the future bride and groom?</label>
+                            <div class="form-group">
+                                <textarea class="form-control" name="messages" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group hidden" id="rsvp-excuses">
+                            <label>Well that sucks! We would have loved to have had you there. Would you care to explain your reasoning for not attending the event of the year?</label>
+                            <div class="form-group">
+                                <textarea class="form-control" name="excuses" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <input type="hidden" name="_next" value="//claireandtonerwedding.com/thanks" />
+                        <button type="button" class="btn btn-default js-previous hidden"><i class="glyphicon glyphicon-menu-left"></i> Back</button>
+                        <button type="button" class="btn btn-default js-next"><i class="glyphicon glyphicon-menu-right"></i> Next</button>
+                        <button type="submit" class="btn btn-default js-submit hidden"><i class="glyphicon glyphicon-ok"></i> Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
+
+        <div class="js-alerts"></div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

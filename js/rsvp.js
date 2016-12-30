@@ -29,6 +29,15 @@ var formRoutes = {
     }
 };
 
+var songs = [
+    'D$A - Wow',
+    'R. Kelly - Bump and Grind',
+    'Mr Blobby - Mr Blobby',
+    'Jason Mraz - I\'m Yours',
+    'Carly Rae Jepsen - I Really Like You',
+    'Aaron Carter - I Just Can\'t Wait To Be King'
+];
+
 // TODO: Switch off Enter key as submit
 var currentStepId = '#rsvp-names';
 
@@ -70,12 +79,23 @@ function namesAreValid() {
     return isValid;
 }
 
+function getSong() {
+    return songs[Math.floor(Math.random() * songs.length)];
+}
+
 function displayErrorMessage(message) {
-    $('.js-rsvp-error-message').text(message);
-    $('.js-rsvp-error').addClass('in');
+    var messageId = Date.now();
+    var markup = '<div class="alert alert-danger fade" id="' +  messageId + '" role="alert">' +
+        '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> ' + message +
+    '</div>';
+    $('.js-alerts').append(markup);
+    $('.js-alerts').find('#' + messageId).addClass('in');
     setTimeout(function() {
-        $('.js-rsvp-error').removeClass('in');
+        $('.js-alerts').find('#' + messageId).removeClass('in');
     }, 3000);
+    setTimeout(function() {
+        $('.js-alerts').find('#' + messageId).remove();
+    }, 3500);
 }
 
 function refreshPersonalFormSteps() {
@@ -94,7 +114,7 @@ function refreshPersonalFormSteps() {
         $('#rsvp-dietaryRequirements').append(markup);
         var markup = '<div class="form-group">' +
             '<label for="songs[' + name + ']">' + name + '</label>' +
-            '<input type="text" class="form-control" id="songs[' + name + ']" name="songs[' + name + ']" placeholder="R. Kelly - Bump and Grind">' +
+            '<input type="text" class="form-control" id="songs[' + name + ']" name="songs[' + name + ']" placeholder="' + getSong() + '">' +
         '</div>';
         $('#rsvp-songs').append(markup);
         var markup = '<div class="checkbox">' +

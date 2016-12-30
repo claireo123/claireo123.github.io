@@ -15,9 +15,16 @@
 }
 
 /* Global Settings */
-html, body, #content {
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.full-height {
     height: 100%;
-    min-width: 300px;
 }
 
 .below-navbar {
@@ -46,11 +53,13 @@ a, a:hover, a:visited {
     color: #ffffff;
 }
 
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:visited {
     color: #ffffff;
 }
 
-.navbar-default .navbar-nav>li>a:hover {
+ {
     color: #ffffff;
 }
 
@@ -141,9 +150,10 @@ a, a:hover, a:visited {
 }
 
 .alert {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     margin: 0 10px;
+    z-index: 100;
 }
 
 .word-wrap {
