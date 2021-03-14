@@ -22,18 +22,6 @@ main {
 }
 
 
-/* Navbar */
-
-.nav-link {
-    color: white;
-    font-weight: 400;
-}
-
-.nav-link:hover {
-    color: #f7d75d;
-}
-
-
 /* Buttons */
 
 .btn {
