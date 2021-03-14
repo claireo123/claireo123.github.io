@@ -1,7 +1,119 @@
-.hero-text {
-    font-family: 'lavigne-display', sans-serif;
+/* Global Layout Settings */
+
+html {
+    height: 100%;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    height: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.container-padded {
+    padding: 50px;
+}
+
+
+/* Navbar */
+
+.nav-link {
+    color: white;
+    font-weight: 400;
+}
+
+.nav-link:hover {
+    color: #f7d75d;
+}
+
+
+/* Buttons */
+
+.btn {
+    border-radius: 0;
+    border-width: 2px;
+    width: 125px;
+}
+
+.btn-outline-dark {
+    color: white;
+    border-color: white;
+    font-weight: 500;
+}
+
+
+/* Imagery */
+
+.img-circle {
+    border-radius: 50%;
+}
+
+
+/* Typography */
+
+.container-heading {
+    font-family: 'lavigne-display', sans-serif;
+}
+
+.hashtag-link,
+.hashtag-link:visited,
+.hashtag-link:hover,
+.hashtag-link:active,
+.hashtag-link:focus,
+.hashtag-link:active:hover {
+    font-style: inherit;
+    color: inherit;
+    background-color: transparent;
+    font-size: inherit;
+    text-decoration: none;
+    font-variant: inherit;
+    font-weight: 700;
+    line-height: inherit;
+    font-family: inherit;
+    border-radius: inherit;
+    border: inherit;
+    outline: inherit;
+    box-shadow: inherit;
+    padding: inherit;
+    vertical-align: inherit;
+    transition: color .5s;
+}
+
+.hashtag-link:hover {
+    color: white;
+}
+
+
+/* Background Colours */
+
+.bg-dark-blue {
+    background-color: #263f71;
+}
+
+.bg-medium-blue {
+    background-color: #0168b6;
+}
+
+.bg-light-blue {
+    background-color: #7bc0e5;
+}
+
+.bg-natural-light {
+    background-color: #e4dfdb;
+}
+
+.bg-natural-dark {
+    background-color: #bba9a1;
+    color: white;
+}
+
+.bg-yellow {
+    background-color: #f7d75d;
 }

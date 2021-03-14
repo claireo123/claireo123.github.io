@@ -1,23 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>Louise &amp; John | 3rd July 2021</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.typekit.net/ype7uzo.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Louise &amp; John | 3rd July 2021</title>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <body>
-        <h1 class="hero-text">Louise & John</h1>
-        <p>ROAR!</p>
-    </body>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ype7uzo.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-dark-blue">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo.svg" alt="Homepage" height="100">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-3">
+                            <a class="nav-link active" aria-current="page" href="/wedding">Wedding</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="/location">Location</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="/gifts">Gifts</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="btn btn-outline-dark" href="/rsvp" role="button">RSVP</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Welcome Container -->
+        <div class="container-fluid bg-dark-blue">
+            <div class="row justify-content-md-center align-items-center text-center py-5">
+                <div class="col-md-8 py-5">
+                    <img class="img-fluid center-block" id="main-image" src="/img/landj.svg">
+                    <p class="py-4">
+                        <a class="btn btn-outline-dark" href="/rsvp" role="button">RSVP</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="container-fluid px-4 py-5">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-lg-6 text-center">
+                    <p>We're so excited to celebrate with you, and finally be able to share the finer details of our wedding.</p>
+                    <p>We're sorry it's a bit later than expected, but we wanted to wait until we had a better understanding of the months ahead. Thanks to the latest government announcement, we're hopeful we can go ahead as planned. It may be a bumpy road
+                        up until we are closer to the time, so please bare with us as things may have to change. We will of course keep you all updated!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location & Timings -->
+        <div class="container-fluid px-4 py-5 bg-natural-dark text-center">
+            <div class="row">
+                <div class="col">
+                    <h1 class="container-heading">The Wedding</h1>
+                </div>
+            </div>
+            <div class="row justify-content-md-center py-4">
+                <div class="col-md-4 col-lg-3">
+                    <h2 class="container-heading">Where</h2>
+                    <p>The Old Barn at The Milky Way<br>Higher Clovelly<br>Devon, EX39 5RY</p>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h2 class="container-heading">When</h2>
+                    <p>
+                        <b>1.30pm</b> - Arrival for ceremony<br>
+                        <b>6.30pm</b> - Arrival for reception<br>
+                        <b>12:00am</b> - Kick out time
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-lg-6">
+                    <h2 class="container-heading">The Milky Way?</h2>
+                    <p>Sounds a little strange, we know, but the venue is actually attached to an amusement park. The entrance to our part of the venue and where you need to go will be clearly signposted.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="container-fluid px-4 py-5 text-center">
+            <div class="row justify-content-md-center">
+                <div class="col-md-3">
+                    <img src="/img/children_320.png" class="img-fluid img-circle p-4" alt="Children">
+                    <h2 class="container-heading">Children</h2>
+                    <p>Our littlest friends are very welcome at our wedding, but we know it can be tricky to dance the night away and look after children at the same time. If you find a willing babysitter, we wouldn't be offended if you used it as an excuse
+                        for a cheeky parents night/weekend away without them. It's up to you, please include them in your RSVP and let us know if they would require food or if you'd prefer to bring your own for them.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="/img/bar_320.png" class="img-fluid img-circle p-4" alt="The Bar">
+                    <h2 class="container-heading">The Bar</h2>
+                    <p>The bar takes card, but the venue recommends that guests bring some cash just in case. There are no cash machines on-site, and the venue is relatively remote, so please bring come prepared!</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="/img/gifts_320.png" class="img-fluid img-circle p-4" alt="Gifts">
+                    <h2 class="container-heading">Gifts</h2>
+                    <p>While your company is all we want for our wedding, especially after a long year of missing everyone, if you would like to give a gift, we are saving up for the honeymoon of our dreams in Mexico and would appreciate any contributions
+                        towards that.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container-fluid px-4 py-5 bg-medium-blue text-center">
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <a class="btn btn-outline-dark mx-4" href="/location" role="button">Location</a>
+                    <a class="btn btn-outline-dark mx-4" href="/rsvp" role="button">RSVP</a>
+                </div>
+            </div>
+            <div class="row justify-content-md-center py-4">
+                <div class="col">
+                    <a class="hashtag-link" href="https://www.instagram.com/explore/tags/landjhitched">#LANDJHITCHED</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+
 </html>
