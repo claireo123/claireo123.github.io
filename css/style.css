@@ -7,6 +7,7 @@ html {
 body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
+    color: #3a3a3a;
 }
 
 main {
@@ -27,12 +28,7 @@ main {
 .btn {
     border-radius: 0;
     border-width: 2px;
-    width: 125px;
-}
-
-.btn-outline-dark {
-    color: white;
-    border-color: white;
+    min-width: 125px;
     font-weight: 500;
 }
 
@@ -72,10 +68,29 @@ main {
     padding: inherit;
     vertical-align: inherit;
     transition: color .5s;
+    color: white;
 }
 
 .hashtag-link:hover {
+    color: black;
+}
+
+
+/* Form */
+
+.form-heading {
+    font-family: 'lavigne-display', sans-serif;
     color: white;
+    font-size: 70pt;
+    font-weight: bold;
+    letter-spacing: 2pt;
+}
+
+.alert {
+    position: fixed;
+    bottom: 10px;
+    margin: 0 10px;
+    z-index: 100;
 }
 
 

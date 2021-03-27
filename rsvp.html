@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Louise &amp; John | 3rd July 2021</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ype7uzo.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+            <div class="container-fluid">
+                <a class="navbar-brand p-4" href="/">
+                    <img src="/img/logo.svg" alt="Homepage" height="100">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="/">Wedding</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="/location">Location</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="/gifts">Gifts</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="btn btn-outline-light" href="/rsvp" role="button">RSVP</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Welcome Container -->
+        <div class="container-fluid bg-dark-blue full-height">
+            <div class="row justify-content-md-center align-items-center text-center">
+                <div class="col-md-8">
+                    <h1 class="form-heading">RSVP</h1>
+                </div>
+            </div>
+            <div class="row justify-content-md-center align-items-center bg-yellow py-5">
+                <div class="col-md-8">
+                    <form method="POST" action="https://formspree.io/f/mjvjbgwn">
+                        <div class="form-group" id="rsvp-names">
+                            <div id="rsvp-names-list">
+                                <div class="form-group">
+                                    <label for="person[]">What are your names? <br><small class="bluetext">Click the "Add Person" button to add a new line for any others you are RSVP-ing for!</small></label>
+                                    <input type="text" class="form-control" name="person[]" placeholder="Your name here">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark js-addPerson"><i class="fa fa-plus"></i> Add Person</button>
+                        </div>
+
+                        <div class="form-group visually-hidden" id="rsvp-attending">
+                            <label for="attending">Will you be gracing us with your presence?</label>
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="attending" id="attendingYes" value="yes" checked>
+                                Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="attending" id="attendingNo" value="no">
+                                No
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group visually-hidden" id="rsvp-dietaryRequirements">
+                            <label>Please could you share any allergies / dietary information?<br><small class="bluetext">Y'know, so we don't have to deal with the drama of poisoning any guests!</small></label>
+                        </div>
+
+                        <div class="form-group visually-hidden" id="rsvp-songs">
+                            <label>What songs would you most like to boogey to on the dance floor?</label>
+                        </div>
+
+                        <div class="form-group visually-hidden" id="rsvp-alcohol">
+                            <label>Who will be drinking alcohol?</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="claire" checked>
+                                    Claire
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group visually-hidden" id="rsvp-messages">
+                            <label>Any messages that you'd like to share with the future bride and groom?</label>
+                            <div class="form-group">
+                                <textarea class="form-control" name="messages" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group visually-hidden" id="rsvp-excuses">
+                            <label>Well that sucks! We would have loved to have had you there. Would you care to explain your reasoning for not attending the event of the year?</label>
+                            <div class="form-group">
+                                <textarea class="form-control" name="excuses" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <input type="hidden" name="_next" value="//louiseandjohnhitched.com/thanks" />
+                        <button type="button" class="btn btn-outline-dark js-previous visually-hidden me-4"><i class="fa fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-outline-dark js-next me-4">Next <i class="fa fa-arrow-right"></i></button>
+                        <button type="submit" class="btn btn-outline-dark js-submit visually-hidden me-4"><i class="fa fa-check"></i> Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/67392a45dd.js" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="/js/rsvp.js"></script>
+</body>
+
+</html>
