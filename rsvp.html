@@ -43,7 +43,7 @@
                             <a class="nav-link" href="/gifts">Gifts</a>
                         </li>
                         <li class="nav-item px-3 pb-3">
-                            <a class="btn btn-outline-light" href="/rsvp" role="button">RSVP</a>
+                            <a class="btn btn-outline-square btn-outline-light" href="/rsvp" role="button">RSVP</a>
                         </li>
                     </ul>
                 </div>
@@ -59,21 +59,35 @@
                     <h1 class="form-heading">RSVP</h1>
                 </div>
             </div>
-            <div class="row justify-content-md-center align-items-center bg-yellow py-5">
-                <div class="col-md-8">
+
+            <!-- "- Name:
+- Email:
+- Will you be attending? Yes/No (drop down or radio buttons)
+- Names of guests in your party: (free text)
+- Allergies or dietary requirements? (free text)
+- Request a song - Artist / Title (free text)
+- Any other comments? (free text)" -->
+
+            <div class="row justify-content-md-center align-items-center bg-white py-5">
+                <div class="col-md-8 rsvp-form">
                     <form method="POST" action="https://formspree.io/f/mjvjbgwn">
-                        <div class="form-group" id="rsvp-names">
+                        <div class="mb-3" id="rsvp-names">
                             <div id="rsvp-names-list">
-                                <div class="form-group">
-                                    <label for="person[]">What are your names? <br><small class="bluetext">Click the "Add Person" button to add a new line for any others you are RSVP-ing for!</small></label>
+                                <div class="mb-3">
+                                    <label class="mb-3" for="person[]">What are your names? <br><small>Click the "Add Person" button to add a new line for any others you are RSVP-ing for!</small></label>
                                     <input type="text" class="form-control" name="person[]" placeholder="Your name here">
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-outline-dark js-addPerson"><i class="fa fa-plus"></i> Add Person</button>
+                            <button type="button" class="btn btn-outline-square btn-outline-dark js-addPerson"><i class="fa fa-plus"></i> Add Person</button>
                         </div>
 
-                        <div class="form-group visually-hidden" id="rsvp-attending">
-                            <label for="attending">Will you be gracing us with your presence?</label>
+                        <div class="mb-3 visually-hidden" id="rsvp-email">
+                            <label class="mb-3" for="email">What is your email address?</label>
+                            <input type="email" class="form-control" name="email" placeholder="me@example.com">
+                        </div>
+
+                        <div class="mb-3 visually-hidden" id="rsvp-attending">
+                            <label class="mb-3" for="attending">Will you be attending?</label>
                             <div class="radio">
                                 <label>
                                 <input type="radio" name="attending" id="attendingYes" value="yes" checked>
@@ -88,16 +102,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group visually-hidden" id="rsvp-dietaryRequirements">
-                            <label>Please could you share any allergies / dietary information?<br><small class="bluetext">Y'know, so we don't have to deal with the drama of poisoning any guests!</small></label>
+                        <div class="mb-3 visually-hidden" id="rsvp-dietaryRequirements">
+                            <label class="mb-3">Allergies or dietary requirements?</label>
                         </div>
 
-                        <div class="form-group visually-hidden" id="rsvp-songs">
-                            <label>What songs would you most like to boogey to on the dance floor?</label>
+                        <div class="mb-3 visually-hidden" id="rsvp-songs">
+                            <label class="mb-3">Request a song - Artist / Title</label>
                         </div>
 
-                        <div class="form-group visually-hidden" id="rsvp-alcohol">
-                            <label>Who will be drinking alcohol?</label>
+                        <div class="mb-3 visually-hidden" id="rsvp-alcohol">
+                            <label class="mb-3">Who will be drinking alcohol?</label>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" value="claire" checked>
@@ -106,30 +120,24 @@
                             </div>
                         </div>
 
-                        <div class="form-group visually-hidden" id="rsvp-messages">
-                            <label>Any messages that you'd like to share with the future bride and groom?</label>
-                            <div class="form-group">
+                        <div class="mb-3 visually-hidden" id="rsvp-messages">
+                            <label class="mb-3">Any other comments?</label>
+                            <div class="mb-3">
                                 <textarea class="form-control" name="messages" rows="3"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group visually-hidden" id="rsvp-excuses">
-                            <label>Well that sucks! We would have loved to have had you there. Would you care to explain your reasoning for not attending the event of the year?</label>
-                            <div class="form-group">
-                                <textarea class="form-control" name="excuses" rows="3"></textarea>
                             </div>
                         </div>
 
                         <hr>
 
                         <input type="hidden" name="_next" value="//louiseandjohnhitched.com/thanks" />
-                        <button type="button" class="btn btn-outline-dark js-previous visually-hidden me-4"><i class="fa fa-arrow-left"></i> Back</button>
-                        <button type="button" class="btn btn-outline-dark js-next me-4">Next <i class="fa fa-arrow-right"></i></button>
-                        <button type="submit" class="btn btn-outline-dark js-submit visually-hidden me-4"><i class="fa fa-check"></i> Submit</button>
+                        <button type="button" class="btn btn-outline-square btn-outline-dark js-previous visually-hidden me-4"><i class="fa fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-outline-square btn-outline-dark js-next me-4">Next <i class="fa fa-arrow-right"></i></button>
+                        <button type="submit" class="btn btn-outline-square btn-outline-dark js-submit visually-hidden me-4"><i class="fa fa-check"></i> Submit</button>
                     </form>
                 </div>
             </div>
         </div>
+        <div class="js-alerts"></div>
     </main>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

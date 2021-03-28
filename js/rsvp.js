@@ -1,13 +1,17 @@
 var formRoutes = {
     '#rsvp-names': {
+        'next': '#rsvp-email'
+    },
+    '#rsvp-email': {
+        'previous': '#rsvp-names',
         'next': '#rsvp-attending'
     },
     '#rsvp-attending': {
         'next': {
             'yes': '#rsvp-dietaryRequirements',
-            'no': '#rsvp-excuses'
+            'no': '#rsvp-messages'
         },
-        'previous': '#rsvp-names'
+        'previous': '#rsvp-email'
     },
     '#rsvp-dietaryRequirements': {
         'previous': '#rsvp-attending',
@@ -23,9 +27,6 @@ var formRoutes = {
     },
     '#rsvp-messages': {
         'previous': '#rsvp-songs'
-    },
-    '#rsvp-excuses': {
-        'previous': '#rsvp-attending'
     }
 };
 
@@ -79,19 +80,29 @@ function namesAreValid() {
     return isValid;
 }
 
+function emailIsValid() {
+    var isValid = $('#rsvp-email input').val() != "";
+
+    if (!isValid) {
+        displayErrorMessage("Please fill in the email field");
+    }
+    return isValid;
+}
+
 function getSong() {
-    return songs[Math.floor(Math.random() * songs.length)];
+    return "Artist / Title";
+    // return songs[Math.floor(Math.random() * songs.length)];
 }
 
 function displayErrorMessage(message) {
     var messageId = Date.now();
     var markup = '<div class="alert alert-danger fade" id="' + messageId + '" role="alert">' +
-        '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> ' + message +
+        '<span class="fa fa-exclamation-circle" aria-hidden="true"></span> ' + message +
         '</div>';
     $('.js-alerts').append(markup);
-    $('.js-alerts').find('#' + messageId).addClass('in');
+    $('.js-alerts').find('#' + messageId).addClass('show active');
     setTimeout(function() {
-        $('.js-alerts').find('#' + messageId).removeClass('in');
+        $('.js-alerts').find('#' + messageId).removeClass('show active');
     }, 3000);
     setTimeout(function() {
         $('.js-alerts').find('#' + messageId).remove();
@@ -100,19 +111,19 @@ function displayErrorMessage(message) {
 
 function refreshPersonalFormSteps() {
     // Clear the personal form steps
-    $('#rsvp-dietaryRequirements .form-group').remove();
-    $('#rsvp-songs .form-group').remove();
+    $('#rsvp-dietaryRequirements div').remove();
+    $('#rsvp-songs div').remove();
     $('#rsvp-alcohol .checkbox').remove();
 
     // Add fields for all confirmed people to the personal form steps
     $('#rsvp-names input').each(function() {
         var name = $(this).val();
-        var markup = '<div class="form-group">' +
+        var markup = '<div class="mb-3">' +
             '<label for="dietaryRequirements[' + name + ']">' + name + '</label>' +
-            '<input type="text" class="form-control" id="dietaryRequirements[' + name + ']" name="dietaryRequirements[' + name + ']"  placeholder="Dessicated coconut because it is icky">' +
+            '<input type="text" class="form-control" id="dietaryRequirements[' + name + ']" name="dietaryRequirements[' + name + ']">' +
             '</div>';
         $('#rsvp-dietaryRequirements').append(markup);
-        var markup = '<div class="form-group">' +
+        var markup = '<div class="mb-3">' +
             '<label for="songs[' + name + ']">' + name + '</label>' +
             '<input type="text" class="form-control" id="songs[' + name + ']" name="songs[' + name + ']" placeholder="' + getSong() + '">' +
             '</div>';
@@ -147,6 +158,14 @@ $('.js-next').on('click', function() {
 
         refreshPersonalFormSteps();
     }
+
+    // Validate the email
+    if (currentStepId === '#rsvp-email') {
+        if (!emailIsValid()) {
+            return;
+        }
+    }
+
     gotoStep(newStepId);
 });
 
@@ -158,20 +177,16 @@ $('.js-previous').on('click', function() {
 
 // Hook up the add person button
 $('.js-addPerson').on('click', function() {
-    var markup = '<div class="form-group">' +
-        '<div class="input-group">' +
+    var markup = '<div class="input-group mb-3">' +
         '<input type="text" class="form-control" name="person[]" placeholder="Another name here">' +
-        '<div class="input-group-addon js-removePerson">' +
-        '<button type="button" class="btn btn-xs btn-no-style"><i class="fa fa-trash"></i></button>' +
-        '</div>' +
-        '</div>' +
+        '<button type="button" class="btn btn-outline-secondary js-removePerson"><i class="fa fa-trash"></i></button>' +
         '</div>';
     $('#rsvp-names-list').append(markup);
 });
 
 // Hook up the delete button on the name form elements
 $('#rsvp-names').on('click', '.js-removePerson', function() {
-    $(this).closest('.form-group').remove();
+    $(this).closest('div').remove();
 });
 
 // Prevent submissions by using the enter key

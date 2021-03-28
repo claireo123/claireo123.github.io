@@ -8,6 +8,7 @@ body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     color: #3a3a3a;
+    font-weight: 300;
 }
 
 main {
@@ -25,18 +26,11 @@ main {
 
 /* Buttons */
 
-.btn {
+.btn-outline-square {
     border-radius: 0;
     border-width: 2px;
     min-width: 125px;
     font-weight: 500;
-}
-
-
-/* Imagery */
-
-.img-circle {
-    border-radius: 50%;
 }
 
 
@@ -86,6 +80,14 @@ main {
     letter-spacing: 2pt;
 }
 
+.rsvp-form label {
+    font-weight: 500;
+}
+
+.rsvp-form label small {
+    font-weight: normal;
+}
+
 .alert {
     position: fixed;
     bottom: 10px;
@@ -119,4 +121,8 @@ main {
 
 .bg-yellow {
     background-color: #f7d75d;
+}
+
+.bg-white {
+    background-color: white;
 }
