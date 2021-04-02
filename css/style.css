@@ -26,6 +26,13 @@ main {
 
 /* Buttons */
 
+a {
+    color: #263f71;
+}
+
+
+/* Buttons */
+
 .btn-outline-square {
     border-radius: 0;
     border-width: 2px;
