@@ -9,7 +9,7 @@ var formRoutes = {
     '#rsvp-attending': {
         'next': {
             'yes': '#rsvp-dietaryRequirements',
-            'no': '#rsvp-messages'
+            'no': '#rsvp-excuses'
         },
         'previous': '#rsvp-email'
     },
@@ -27,17 +27,11 @@ var formRoutes = {
     },
     '#rsvp-messages': {
         'previous': '#rsvp-songs'
+    },
+    '#rsvp-excuses': {
+        'previous': '#rsvp-attending'
     }
 };
-
-var songs = [
-    'D$A - Wow',
-    'R. Kelly - Bump and Grind',
-    'Mr Blobby - Mr Blobby',
-    'Jason Mraz - I\'m Yours',
-    'Carly Rae Jepsen - I Really Like You',
-    'Aaron Carter - I Just Can\'t Wait To Be King'
-];
 
 // TODO: Switch off Enter key as submit
 var currentStepId = '#rsvp-names';
@@ -89,11 +83,6 @@ function emailIsValid() {
     return isValid;
 }
 
-function getSong() {
-    return "Artist / Title";
-    // return songs[Math.floor(Math.random() * songs.length)];
-}
-
 function displayErrorMessage(message) {
     var messageId = Date.now();
     var markup = '<div class="alert alert-danger fade" id="' + messageId + '" role="alert">' +
@@ -125,7 +114,7 @@ function refreshPersonalFormSteps() {
         $('#rsvp-dietaryRequirements').append(markup);
         var markup = '<div class="mb-3">' +
             '<label for="songs[' + name + ']">' + name + '</label>' +
-            '<input type="text" class="form-control" id="songs[' + name + ']" name="songs[' + name + ']" placeholder="' + getSong() + '">' +
+            '<input type="text" class="form-control" id="songs[' + name + ']" name="songs[' + name + ']" placeholder="Artist / Title">' +
             '</div>';
         $('#rsvp-songs').append(markup);
         var markup = '<div class="checkbox">' +
